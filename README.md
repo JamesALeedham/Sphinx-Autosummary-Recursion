@@ -6,7 +6,7 @@ Assuming a Python 3.x environment, to compile and view the API documentation loc
 
 1) Install dependencies:
 
-   `pip install -U sphinx==3.1.1 sphinx_rtd_theme sphinx_autodoc_typehints`
+   `pip install -r docs/requirements.txt`
    
 2) Change to the `docs` directory:
 
