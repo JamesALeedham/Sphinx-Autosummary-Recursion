@@ -1,10 +1,21 @@
 # Sphinx-Autosummary-Recursion
 
-This repo contains a Python package demonstrating the new automatic package recursion facility in `sphinx.ext.autosummary` version 3.1.
+This repo contains a Python package demonstrating the new
+[automatic package recursion functionality](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html?highlight=%3Arecursive%3A#directive-autosummary) 
+in `sphinx.ext.autosummary` version 3.1 (see the `:recursive:` option towards the bottom).
 
-Assuming a Python 3.x environment, to compile and view the API documentation locally:
+The goal of this demo is to:
 
-1) Install dependencies:
+* Point Sphinx at the top of the source code tree, and have it automatically find all the modules in the package, however deeply nested.
+* For each module, list the attributes, functions, classes and exceptions in that module in summary tables.
+* For each entry in a summary table, create a hyperlink to a new page containing the documentation for that attribute, function, class or exception.
+* For each class, document (my choice of) inheritence, public members, inherited members, and special members such as `__call__`.
+
+The resulting built API documentation is [available to view on ReadTheDocs](https://sphinx-autosummary-recursion.readthedocs.io/en/latest/).
+
+Or you can clone the repo and build and view the API documentation locally:
+
+1) Assuming a Python 3.x environment, install dependencies:
 
    `pip install -r docs/requirements.txt`
    
@@ -12,7 +23,7 @@ Assuming a Python 3.x environment, to compile and view the API documentation loc
 
    `cd docs`
 
-3) Compile the documentation:
+3) Build the documentation:
 
    `make html`
 
@@ -20,6 +31,6 @@ Assuming a Python 3.x environment, to compile and view the API documentation loc
 
    `python -m http.server`
 
-5) Check documentation locally by opening in a browser:
+5) View documentation locally by opening in a browser:
 
    http://localhost:8000/build/html/

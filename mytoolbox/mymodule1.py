@@ -1,10 +1,11 @@
 """
 Module containing a class, global function, exception, type variable and type alias.
 
-For some reason, the type variable is included in the list of variables and so is automatically
-summarised and documented, but the type alias isn't.
+The type variable gets included in the list of variables captured by the template and so is
+automatically summarised and documented.
 
-The type alias can be documented manually using the `autodata` directive::
+For some reason, the type alias doesn't. However, it can be documented manually using
+the `autodata` directive, ie::
 
     .. autodata:: myTypeAlias
 
