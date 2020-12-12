@@ -12,9 +12,6 @@
 import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))  # Source code dir relative to this file
-# Temp. workaround for https://github.com/agronholm/sphinx-autodoc-typehints/issues/133
-import warnings
-warnings.filterwarnings('ignore', message = 'sphinx.util.inspect.Signature\(\) is deprecated')
 
 # -- Project information -----------------------------------------------------
 
