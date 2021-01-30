@@ -5,8 +5,8 @@
 # from the environment for the first two.
 SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
-SOURCEDIR     = source
-BUILDDIR      = build
+SOURCEDIR     = .
+BUILDDIR      = _build
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -22,6 +22,7 @@ help:
 
 # Convert .py to .ipynb (don't seem to need to --execute? perhaps sphinx-build does it...), then build html:
 %: Makefile
-	rm -rf build
-	rm -rf source/_autosummary
+	rm -rf _build
+	rm -rf _autosummary
+	jupytext --to notebook notebooks/*.py
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)

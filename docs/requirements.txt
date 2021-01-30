@@ -1,3 +1,9 @@
-sphinx==3.1.1
-sphinx-rtd-theme==0.5.0
+sphinx
+sphinx-rtd-theme
+pydata-sphinx-theme
 sphinx-autodoc-typehints
+nbsphinx
+ipython
+jupytext
+matplotlib
+numpy
