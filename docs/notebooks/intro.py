@@ -17,11 +17,6 @@
 """
 # Introducing Jupyter Notebooks
 
-For more information on Jupyter, see their `web site <https://jupyter.org/>`_.
-"""
-
-# %% [markdown]
-"""
 First, set up the environment:
 """
 
@@ -38,6 +33,7 @@ except AttributeError:
     matplotlib.use('Agg')
 
 pl.rcParams["figure.figsize"] = [15, 8]
+
 # %% [markdown]
 """
 Then, define a function that creates a pretty graph:
@@ -67,7 +63,6 @@ def SineAndCosineWaves():
 """
 Finally, call that function to display the graph:
 """
-
 
 # %%
 SineAndCosineWaves()

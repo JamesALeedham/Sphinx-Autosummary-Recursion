@@ -9,6 +9,7 @@
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
+# Problems with imports? Could try `export PYTHONPATH=$PYTHONPATH:`pwd`` from root project dir...
 import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))  # Source code dir relative to this file
@@ -60,7 +61,6 @@ templates_path = ['_templates']
 #autodoc_mock_imports = [
     # 'tensorflow',
     # 'tensorflow_probability',
-    # 'markovflow.base',
 #]
 # To exclude a class, function, method or attribute, use autodoc-skip-member. (Note this can also
 # be used in reverse, ie. to re-include a particular member that has been excluded.)
@@ -92,7 +92,7 @@ if not on_rtd:  # only import and set the theme if we're building docs locally
     import sphinx_rtd_theme
     html_theme = "sphinx_rtd_theme"
     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
-#html_css_files = ["readthedocs-custom.css"] # Use default blue theme color for now
+html_css_files = ["readthedocs-custom.css"] # Override some CSS settings
 
 # Pydata theme
 #html_theme = "pydata_sphinx_theme"

@@ -1,36 +1,44 @@
 # Sphinx-Autosummary-Recursion
 
-This repo contains a Python package demonstrating the new
-[automatic package recursion functionality](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html?highlight=%3Arecursive%3A#directive-autosummary) 
-in `sphinx.ext.autosummary` version 3.1 (see the `:recursive:` option towards the bottom of the above link).
+The primary goal of this repo is to demonstrate the new automatic package detection 
+facility for Python API documentation available in Sphinx 3.1+. See 
+[this StackOverflow answer](https://stackoverflow.com/questions/2701998/sphinx-autodoc-is-not-automatic-enough/62613202#62613202) for context.
 
-The goal of this demo is to:
+A secondary goal is to showcase the integration of Jupyter Notebooks with Sphinx.
 
-* Point Sphinx at the top of a source code tree, and have it automatically find all the modules in the package, however deeply nested.
-* For each module, list the attributes, functions, classes and exceptions in that module in summary tables.
-* For each entry in a summary table, create a hyperlink to a new page containing the documentation for that attribute, function, class or exception.
-* For each class, document (my choice of) inheritence, public members, inherited members, and special members such as `__call__`.
+The resulting Sphinx-built HTML doc set is [available to view on ReadTheDocs](https://sphinx-autosummary-recursion.readthedocs.io/en/latest/).
 
-The resulting built API documentation is [available to view on ReadTheDocs](https://sphinx-autosummary-recursion.readthedocs.io/en/latest/).
 
-Or you can clone the repo and build and view the API documentation locally:
+## Automatically creating API documentation
 
-1) Assuming a Python 3.x environment, install dependencies:
+From Sphinx 3.1, `sphinx.ext.autosummary` has a `:recursive:` option that iterates over a Python 
+package automatically, so you no longer have to hard code all your module names, or integrate a 3rd party 
+extension to provide this functionality. Scroll down 
+[this Sphinx documentation](https://www.sphinx-doc.org/en/master/usage/extensions/autosummary.html?highlight=%3Arecursive%3A#directive-autosummary) 
+for more information. 
 
-   `pip install -r docs/requirements.txt`
-   
-2) Change to the `docs` directory:
+This repo demonstrates how to:
 
-   `cd docs`
+1. Point Sphinx at the top of a Python source code tree, and have it automatically find all the modules in the package, however deeply nested.
 
-3) Build the documentation:
+2. For each module, list the attributes, functions, classes and exceptions in that module in summary tables.
 
-   `make html`
+3. For each entry in a summary table, create a hyperlink to a new page displaying the extracted docstrings for that attribute, function, class or exception.
 
-4) Run a web server:
+4. For each class, document (my choice of) inheritance, public members, inherited members, and special members such as `__call__`. Other choices are available.
 
-   `python -m http.server`
+For more information, start with `docs/README`.
 
-5) View documentation locally by opening in a browser:
+## Integrating Jupyter Notebooks with Sphinx
 
-   http://localhost:8000/_build/html/
+Jupyter Notebooks blend live code, text and visualizations. It’s often useful to integrate them alongside API documentation to provide tutorial-style material.
+
+For more information, start with `docs/notebooks/README`.
+
+## Switching between different HTML themes
+
+Since it’s hosted on Readthedocs, the default theme (stylesheet) for the HTML doc set is `sphinx-rtd-theme`. 
+There's a small alteration to this theme’s CSS to make the page width slightly wider; see `docs/_static/readthedocs-custom.css`.
+
+Other themes are available; settings to switch over to the popular `pydata-sphinx-theme` are commented out in `docs/conf.py.`
+

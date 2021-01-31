@@ -1,5 +1,4 @@
 # Minimal makefile for Sphinx documentation
-#
 
 # You can set these variables from the command line, and also
 # from the environment for the first two.
@@ -17,10 +16,7 @@ help:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 
-# Create a .py (percent format with multiline comments) from an .ipynb in the first place:
-# jupytext --update-metadata '{"jupytext": {"cell_markers": "\"\"\""}}' --to py:percent <name-of-notebook>.ipynb
-
-# Convert .py to .ipynb (don't seem to need to --execute? perhaps sphinx-build does it...), then build html:
+# Note: Jupytext converts .py to .ipynb (Sphinx seems to execute Notebook..?)
 %: Makefile
 	rm -rf _build
 	rm -rf _autosummary

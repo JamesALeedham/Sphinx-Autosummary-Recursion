@@ -1,19 +1,27 @@
-# Running a Jupyter Notebook interactively
+# Configuring Sphinx to integrate Jupyter Notebooks
 
-If you want to interact with live code in a Notebook (as opposed to viewing executed code in HTML documentation built by Sphinx):
+See `requirements.txt` for required libraries.
 
-1. Clone the repo and install additional dependencies:
+See `conf.py` for Sphinx extensions and settings.
 
-   pip install -r requirements.txt
+See `tutorials.rst` for placement of the Notebook in a `.. toctree::` directive.
 
-2. Navigate to the ``docs/notebooks`` directory.
-3. Convert the Notebook you want to run from ``.py`` to ``.ipynb``, for example:
+# Running a Notebook interactively
 
-4. Run that Notebook:
+Sphinx *executes* a Notebook when it builds the HTML doc set so it's not possible for users to edit/interact with live code.
+Users can still play Jupyter Notebooks interactively by:
 
-jupyter-notebook notebooks/<name-of-notebook>
+1. Cloning the repo and installing required dependencies:
 
-# Creating a new Jupyter Notebook
+   `pip install -r requirements.txt`
+
+2. Navigating to the `docs/notebooks` directory.
+   
+4. Running the required Notebook:
+
+   `jupyter-notebook <name-of-notebook>.ipynb`
+
+# Creating a new Notebook
 
 You can either create a Notebook as a regular Python ``.py`` file, or using the proprietary Jupyter ``.ipynb`` format. 
 
@@ -72,15 +80,3 @@ run the following command to convert `<your-new-file>.ipynb` file to `<your-new-
     jupytext --update-metadata '{"jupytext": {"cell_markers": "\"\"\""}}' --to py:percent <your-new-file>.ipynb
 
 When ready, commit `<your-new-file>.py`. You can delete `<your-new-file>.ipynb`.
-
-## Including your Notebook in the Sphinx HTML documentation
-
-Open `docs/tutorials.rst` and insert a TOC entry for the Notebook, for example:
-
-    .. toctree::
-       :maxdepth: 1
-
-       notebooks/intro
-       notebooks/<your-new-file>
-
-Then, build the docs as detailed in `docs/README.md`.
